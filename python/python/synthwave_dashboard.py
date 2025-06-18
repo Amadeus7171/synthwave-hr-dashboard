@@ -1,12 +1,16 @@
 import streamlit as st
 import pandas as pd
-import pyodbc
 
+df = pd.read_csv("data/employee_salary.csv")
 # Set up the page
 st.set_page_config(page_title="🕶️ SynthWave HR Dashboard", layout="centered")
 st.title("🎛️ SynthWave HR Insights")
 
-# Connect to DB
+# conn = pyodbc.connect(...)
+# df = pd.read_sql(query, conn)
+
+df = pd.read_csv("data/employee_salary.csv")
+
 conn = pyodbc.connect('DRIVER={SQL Server};SERVER=localhost;DATABASE=synthwave_db;Trusted_Connection=yes;')
 
 # Pull employee salary data
